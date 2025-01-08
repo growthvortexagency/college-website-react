@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/facultyLogin.css'
+import '../../styles/StaffsLogin.css'
 
 const StaffsLogin = () => {
   return (
