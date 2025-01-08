@@ -1,37 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../styles/facultyLogin.css'
-import Validation from './staffLoginValidation'
 
 const StaffsLogin = () => {
-  const [values, setValues] = useState({
-    loginID: '',
-    password: ''
-  })
-  const [errors, setErrors] = useState({})
- 
-  const handleInput = (event) => {
-    setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setErrors(Validation(values));
-    if(error.email === "" && errors.password === "") {
-      axios.post('http://localhost:3306')
-    }
-
-  }
-
   return (
     <div className='login-container'>
       <div class="container1">
         <div class="form-container sign-in-container">
-          <form action="" onSubmit={handleSubmit}>
+          <form action="">
             <h1>Sign in</h1>
-            <input type="loginID" placeholder="Enter your login ID" onChange={handleInput} name='loginID'/>
-            {errors.loginID && <span className='error-text'> {errors.loginID} </span>}
-            <input type="password" placeholder="Enter your Password" onChange={handleInput} name='password'/>
-            {errors.password && <span className='error-text'> {errors.password} </span>}
+            <input type="loginID" placeholder="Enter your login ID" name='loginID'/>
+            <input type="password" placeholder="Enter your Password" name='password'/>
             <a href="#">Forgot your password?</a>
             <button type='submit' >Sign In</button>
           </form>

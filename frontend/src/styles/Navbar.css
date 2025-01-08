@@ -95,3 +95,124 @@
     transform: scale(1) translateY(5px);
     opacity: 1;
 }
+
+/* ====================== Mobile Navbar Design =========================  */
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 10px 10px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  
+  /* Desktop Dropdown */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar .close-btn {
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  
+  .sidebar a,
+  .dropdown-header {
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  .dropdown-header {
+    margin-left: 15px;
+  }
+
+  .mobile-dropdown-content {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .navbar-left {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+
+    .navbar {
+        background-color: transparent;
+    }
+  }
+  
