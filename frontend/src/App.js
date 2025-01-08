@@ -51,7 +51,7 @@ function AppContent() {
       {!shouldHideHeaderNavbar && <Header />}
       {!shouldHideHeaderNavbar && <Navbar />}
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/About/GovernanceLeadership" element={<GovernanceLeadership />} />
         <Route path="/About/History" element={<History />} />
         <Route path="/About/Patron" element={<Patron />} />

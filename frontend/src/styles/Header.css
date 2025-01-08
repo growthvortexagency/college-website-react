@@ -23,3 +23,7 @@
     top: 5px;
     margin-right: 4%;
 }
+
+.event-container h1 {
+    text-align: center;
+}
