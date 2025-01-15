@@ -32,6 +32,7 @@ import RecrutingPartners from './pages/Placements/RecrutingPartners';
 import Training from './pages/Placements/Training';
 import Faculties from "./pages/Faculties/Faculties";
 import Library from "./pages/Library/Library";
+import StaffDashboard from "./pages/Dashboards/staffsdashboards";
 
 function AppContent() {
   const location = useLocation();
@@ -78,6 +79,7 @@ function AppContent() {
         <Route path="/Login/AdminLogin" element={<AdminLogin />} />
         <Route path="/Login/StaffsLogin" element={<StaffsLogin />} />
         <Route path="/Login/StudentsLogin" element={<StudentsLogin />} />
+        <Route path="/Dashboards/StaffDashboard" element={<StaffDashboard />} />
       </Routes>
     </>
   );

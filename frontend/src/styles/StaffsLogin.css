@@ -244,3 +244,16 @@ form {
 		font-size: 30px;
 	}
 }
+
+.error-message {
+	color: red;
+	font-size: 0.9em;
+  }
+  
+  .success-message {
+	color: green;
+	font-size: 1em;
+	margin-top: 10px;
+	text-align: center;
+  }
+  
