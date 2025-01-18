@@ -1,103 +1,90 @@
 import React from 'react'
-import logo from '../assets/logos/St_Anthony_College_Logo.png'
+import logo from '../assets/images/college_logo_name.png'
+import divyashree from '../assets/images/Divyashree.png'
+import divakar from '../assets/images/Divakar.png'
+import abhishek from '../assets/images/Abhishek.png'
+import { ReactComponent as Facebook } from '../assets/icons/facebook.svg';
+import { ReactComponent as Instagram } from '../assets/icons/instagram.svg';
+import { ReactComponent as Threads } from '../assets/icons/threads.svg';
+import { ReactComponent as Youtube } from '../assets/icons/youtube.svg';
+import { ReactComponent as Xtwitter } from '../assets/icons/x-twitter.svg';
 import '../styles/Footer.css'
 
 export const Footer = () => {
     return (
         <footer>
-            <div className="background">
-                <svg
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 1600 900"
-                >
-                    <defs>
-                        <path
-                            id="wave"
-                            fill="rgba(105, 27, 252, 0.6)"
-                            d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-              s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
-                        />
-                    </defs>
-                    <g>
-                        <use xlinkHref="#wave" opacity=".4">
-                            <animateTransform
-                                attributeName="transform"
-                                attributeType="XML"
-                                type="translate"
-                                dur="8s"
-                                calcMode="spline"
-                                values="270 230; -334 180; 270 230"
-                                keyTimes="0; .5; 1"
-                                keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-                                repeatCount="indefinite"
+            <div className="footer">
+                <div className="logo-section">
+                    <img src={logo} alt="St Anthony's College Logo" />
+                    <p>EMPOWERING STUDENTS THROUGH KNOWLEDGE, INNOVATION, AND A VIBRANT CAMPUS EXPERIENCE.</p>
+                    <div class="newsletter">
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p>Get the latest updates delivered straight to your inbox!</p>
+                        <form class="newsletter-form">
+                            <input
+                                type="email"
+                                placeholder="Enter your email address"
+                                required
+                                class="email-input"
                             />
-                        </use>
-                        <use xlinkHref="#wave" opacity=".6">
-                            <animateTransform
-                                attributeName="transform"
-                                attributeType="XML"
-                                type="translate"
-                                dur="6s"
-                                calcMode="spline"
-                                values="-270 230;243 220;-270 230"
-                                keyTimes="0; .6; 1"
-                                keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-                                repeatCount="indefinite"
-                            />
-                        </use>
-                        <use xlinkHref="#wave" opacity=".9">
-                            <animateTransform
-                                attributeName="transform"
-                                attributeType="XML"
-                                type="translate"
-                                dur="4s"
-                                calcMode="spline"
-                                values="0 230;-140 200;0 230"
-                                keyTimes="0; .4; 1"
-                                keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-                                repeatCount="indefinite"
-                            />
-                        </use>
-                    </g>
-                </svg>
+                            <button type="submit" class="subscribe-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="map-section">
+                    <h3>Visit Us</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13079.968240351709!2d77.49121499818274!3d12.92713284468112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fc9ee8ae025%3A0x833ed7fc246e3a15!2sDarshan%20Degree%20College!5e0!3m2!1sen!2sin!4v1733118898970!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div className="coordinator-section">
+                    <h3>Web Coordinators</h3>
+                    <div className="coordinator">
+                        <img src={divyashree} alt="Divyashree B L" />
+                        <div>
+                            <span>Divyashree B L</span>
+                            <span>Web Coordinator</span>
+                            <span>St. Anthony's College</span>
+                        </div>
+                    </div>
+                    <div className="coordinator">
+                        <img src={divakar} alt="Divakar S" />
+                        <div>
+                            <span>Divakar S</span>
+                            <span>Web Coordinator</span>
+                            <span>St. Anthony's College</span>
+                        </div>
+                    </div>
+                    <div className="coordinator">
+                        <img src={abhishek} alt="Abhishek B M" />
+                        <div>
+                            <span>Abhishek B M</span>
+                            <span>Web Developer</span>
+                            <span>St. Anthony's College</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <section>
-                <ul className="socials">
-                    <li>
-                        <a href="#" className="fa-brands fa-x-twitter"></a>
-                    </li>
-                    <li>
-                        <a href="#" className="fa-brands fa-facebook"></a>
-                    </li>
-                    <li>
-                        <a href="#" className="fa-brands fa-linkedin"></a>
-                    </li>
-                </ul>
-                <ul className="links">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Skillset</a>
-                    </li>
-                    <li>
-                        <a href="#">Hire</a>
-                    </li>
-                </ul>
-                <p className="legal">© 2024 All rights reserved</p>
-            </section>
+            <div className='second-footer'>
+                <div className='quick-links'>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>News & Events</li>
+                        <li>Newsletters</li>
+                    </ul>
+                </div>
+                <div className='social-links'>
+                    <h3>Follow Us On</h3>
+                    <Facebook width='50' height='50' />
+                    <Instagram width='50' height='50' />
+                    <Xtwitter width='50' height='50' />
+                    <Threads width='50' height='50' />
+                    <Youtube width='50' height='50' />
+                </div>
+            </div>
         </footer>
     );
 };

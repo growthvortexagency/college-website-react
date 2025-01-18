@@ -1,76 +1,190 @@
-.background {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-ul {
+.footer {
     display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background-color:rgb(31, 31, 31);
+    color: aliceblue;
+    border-bottom: 2px solid white;
 }
 
-.socials {
-    gap: 20px;
-}
-
-.socials a {
-    font-size: 24px;
-}
-
-.links {
-    gap: 10px;
-}
-
-.legal {
-    font-size: 12px;
-    margin: 0;
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  h3 {
+      font-size: 25px;
+  }
+  
+  .footer .logo-section {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+  
+    .footer .logo-section img {
+    max-width: 370px;
+  }
+  
+  .footer .logo-section p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .footer .map-section {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .footer .map-section iframe {
+    border: none;
     width: 100%;
-    height: 100%;
-    transform: scaleY(2.5) scaleX(2.25);
-    transform-origin: bottom;
-    box-sizing: border-box;
-    display: block;
-    pointer-events: none;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    max-width: 300px;
+    height: 200px;
+  }
+  
+  .footer .coordinator-section {
+    flex: 1 1 300px;
+  }
+  
+  .footer .coordinator-section h3 {
+    text-align: center;
+  }
+  
+  .footer .coordinator {
     display: flex;
-    width: 100%;
-    height: 370px;
-}
-
-section {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .footer .coordinator img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  
+  .footer .coordinator div {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 30px;
-    padding-bottom: 80px;
-    padding-left: 60px;
+  }
+  
+  .footer .coordinator div span {
+    font-size: 14px;
+  }
+  
+  .horizontal-line {
     width: 100%;
+    border-top: 1px solid #555;
+  }
+  
+  .copyright {
+    text-align: center;
+    color: aliceblue;
+    padding: 10px;
+    font-size: 12px;
+    background-color: #111;
+  }
+
+  .coordinator div span:nth-of-type(1) {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+.coordinator div span:nth-of-type(2),
+.coordinator div span:nth-of-type(3) {
+  font-style: italic;
 }
 
-@media (width > 420px) {
-    section {
+.newsletter {
+    margin: auto;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+  
+.newsletter h2 {
+    font-size: 1.6rem;
+    color: white;
+  }
+  
+  .newsletter p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .email-input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .email-input:focus {
+    border-color: #007bff;
+  }
+  
+  .subscribe-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .subscribe-button:active {
+    background-color: #004494;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
         align-items: center;
-        padding-left: 0;
-        gap: 20px;
+    }
+  
+    .footer .logo-section, .footer .map-section, .footer .coordinator-section {
+        margin-bottom: 20px;
+    }
+  
+    .footer .map-section iframe {
+        max-width: 100%;
     }
 
-    .links {
-        gap: 20px;
+    .footer .coordinator {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
+  }
+
+  .second-footer {
+    background-color:rgb(31, 31, 31);
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
+
+  .quick-links {
+      margin-top: 20px;
+      width: 100%;
+    margin: auto
+  }

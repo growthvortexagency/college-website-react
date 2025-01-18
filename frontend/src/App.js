@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from './components/Header';
+import Footer from './components/Footer'
 import Navbar from "./components/Navbar";
 
 /* Importing Navigation Elements Pages */
@@ -48,7 +49,6 @@ function AppContent() {
 
   return (
     <>
-      {/* Render Header and Navbar only if not in noHeaderNavbarRoutes */}
       {!shouldHideHeaderNavbar && <Header />}
       {!shouldHideHeaderNavbar && <Navbar />}
       <Routes>
@@ -81,6 +81,7 @@ function AppContent() {
         <Route path="/Login/StudentsLogin" element={<StudentsLogin />} />
         <Route path="/Dashboards/StaffDashboard" element={<StaffDashboard />} />
       </Routes>
+      {!shouldHideHeaderNavbar && <Footer />}
     </>
   );
 }
