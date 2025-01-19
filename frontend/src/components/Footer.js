@@ -65,10 +65,11 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div class="divider"></div>
             <div className='second-footer'>
                 <div className='quick-links'>
                     <h3>Quick Links</h3>
-                    <ul>
+                    <ul className='menu-links-footer'>
                         <li>Home</li>
                         <li>About Us</li>
                         <li>Contact Us</li>
@@ -78,11 +79,16 @@ export const Footer = () => {
                 </div>
                 <div className='social-links'>
                     <h3>Follow Us On</h3>
-                    <Facebook width='50' height='50' />
-                    <Instagram width='50' height='50' />
-                    <Xtwitter width='50' height='50' />
-                    <Threads width='50' height='50' />
-                    <Youtube width='50' height='50' />
+                    <ul className='social-icons'>
+                        <li><Facebook width='40' height='40' /></li>
+                        <li><Instagram width='40' height='40' /></li>
+                        <li><Xtwitter width='40' height='40' /></li>
+                        <li><Threads width='40' height='40' /></li>
+                        <li><Youtube width='40' height='40' /></li>
+                    </ul>
+                </div>
+                <div className='copyright'>
+                    <p>© 2025 St. Anthony's College, Bangalore 560-059. All rights reserved.</p>
                 </div>
             </div>
         </footer>

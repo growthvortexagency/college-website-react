@@ -6,7 +6,6 @@
     padding: 20px;
     background-color:rgb(31, 31, 31);
     color: aliceblue;
-    border-bottom: 2px solid white;
 }
 
   h3 {
@@ -176,6 +175,14 @@
     }
   }
 
+  .divider {
+    height: 1px;
+    z-index: 100;
+    background-color: white;
+    margin: 1px 0;
+    padding: 0 20px;
+  }
+
   .second-footer {
     background-color:rgb(31, 31, 31);
     justify-content: center;
@@ -184,7 +191,93 @@
 }
 
   .quick-links {
-      margin-top: 20px;
-      width: 100%;
-    margin: auto
+    margin: auto;
+  }
+
+  .quick-links h3 {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .menu-links-footer {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    padding: 20px 0;
+    list-style: none;
+  }
+
+  .menu-links-footer li {
+    margin-right: 20px;
+  }
+
+  .menu-links-footer li:last-child {
+    margin-right: 0
+  }
+
+  .menu-links-footer li {
+    color: gray;
+    cursor: pointer;
+  }
+
+  .menu-links-footer li:hover {
+    color: white;
+    transition: 0.3s;
+  }
+
+  .social-links {
+    margin: auto;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .social-links h3 {
+    margin-top: 10px;
+  }
+
+  .social-icons li {
+    cursor: pointer;
+    fill: gray;
+  }
+
+  .social-icons li:hover {
+    fill: white;
+    transition: 0.3s;
+  }
+
+  .copyright {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border: 2px 0 solid gray;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  @media (width < 900px) {
+    .menu-links-footer {
+      display: block;
+      text-align: center;
+    }
+
+    .menu-links-footer li {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+    
+    .menu-links-footer li:last-child {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+    
   }
