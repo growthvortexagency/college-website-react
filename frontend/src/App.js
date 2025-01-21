@@ -34,6 +34,7 @@ import Training from './pages/Placements/Training';
 import Faculties from "./pages/Faculties/Faculties";
 import Library from "./pages/Library/Library";
 import StaffDashboard from "./pages/Dashboards/staffsdashboards";
+import Contact from "./pages/Contact/Contact";
 
 function AppContent() {
   const location = useLocation();

@@ -1,81 +1,68 @@
 // EventCards.js
 import React from "react";
 import "../styles/EventCards.css";
+import img1 from '../assets/images/_DSC6174.JPG'
+import img2 from '../assets/images/DSC_1703.JPG'
+import img3 from '../assets/images/DSC00138.JPG'
 
 const events = [
   {
-    id: 1,
-    title: "Web Development Program",
-    month: "SEP",
-    date: "22",
-    location: "Computer Lab",
-    image: "conference.jpg",
+    date: "14",
+    monthandyear: "SEP 2024",
+    title: "Onam Celebration",
+    description:
+      "The Onam celebration was vibrant, featuring a beautiful Pookalam, a colorful rangoli competition, and a delicious traditional Onasadya, fostering unity and joy among all.",
+    image: img1,
   },
   {
-    id: 2,
-    title: "React Website Workshop",
-    month: "OCT",
-    date: "08",
-    location: "Computer Lab",
-    image: "dream.jpg",
-  },
-  {
-    id: 3,
-    title: "Freshers' Day",
-    month: "OCT",
-    date: "26",
-    location: "St. Anthony's College Auditorium",
-    image: "fireworks.jpg",
-  },
-  {
-    id: 4,
-    title: "Karnataka Rajyotsava",
-    month: "NOV",
     date: "01",
-    location: "St. Anthony's College Auditorium",
-    image: "design.jpg",
+    monthandyear: "OCT 2024",
+    title: "Blood donation",
+    description: "Blood donation drive was impactful, promoting awareness, saving lives and fostering a sense of responsibility and unity among all.",
+    image: img3,
   },
   {
-    id: 5,
-    title: "Christmas Celebration",
-    month: "DEC",
-    date: "25",
-    location: "St. Anthony's College Auditorium",
-    image: "president.jpg",
-  },
-  {
-    id: 6,
-    title: "NAAC Visit",
-    month: "DEC",
-    date: "30",
-    location: "St. Anthony's College",
-    image: "uiux.jpg",
+  date: "22",
+  monthandyear: "OCT 2024",
+  title: "Web Designing",
+  description:
+    "The college's Web Designing competition was vibrant, showcasing creative designs, innovative ideas and excellent technical skills, fostering learning and enthusiasm among all.",
+  image: img2,
   },
 ];
 
 const EventCards = () => {
   return (
-    <div className="event-container">
-      <h1>News & Events</h1>
-      <div className="card-scroll">
-        {events.map((event) => (
-          <div className="event-card" key={event.id}>
-            <div
-              className="event-image"
-              style={{
-                // backgroundImage: `url(${require(`./images/${event.image}`)})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-            <div className="event-details">
-              <p className="event-date">{event.month} {event.date}</p>
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-location">{event.location}</p>
+    <div className="upcoming-events">
+      <h2 className="section-title">News and Events</h2>
+      <p className='section-description'>
+        Stay informed with the latest updates, announcements, and events happening on campus.
+      </p>
+      <div className="events-container">
+        {events.map((event, index) => (
+          <div key={index} className="event-card">
+            <div className="event-image">
+              <img src={event.image} alt={event.title} />
             </div>
+            <div className="event-info">
+              <div className="event-date">
+                <span className="event-day">
+                  {event.date}
+                </span>
+                <span className="event-month-year">
+                  {event.monthandyear}
+                </span>
+              </div>
+              <h3 className="event-title">{event.title}</h3>
+              {event.description && (
+                <p className="event-description">{event.description}</p>
+              )}
+            </div>
+            <button className="learn-more">Read More</button>
           </div>
         ))}
       </div>
+      <button className="see-all-events">See All Events</button>
     </div>
   );
 };

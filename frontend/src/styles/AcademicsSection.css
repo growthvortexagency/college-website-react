@@ -18,7 +18,7 @@
   .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: center;
   }
   
@@ -27,7 +27,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
+    width: 30%;
     text-align: left;
   }
   
@@ -66,14 +66,18 @@
 }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (width < 900px) {
     .cards {
       flex-direction: column;
       align-items: center;
     }
+
+    .card {
+      width: 60%;
+    }
   }
   
-  @media (max-width: 480px) {
+  @media (width < 480px) {
     .academics h1 {
       font-size: 2rem;
     }
@@ -92,5 +96,9 @@
   
     .card a {
       font-size: 0.9rem;
+    }
+
+    .card {
+      width: 98%;
     }
   }

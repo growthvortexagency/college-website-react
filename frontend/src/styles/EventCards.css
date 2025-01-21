@@ -1,114 +1,130 @@
-/* EventCards.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.event-container {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-.event-container h2 {
+.upcoming-events {
   text-align: center;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  color: black; /* Dark red color */
 }
 
-.card-scroll {
+.section-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Event Cards Container */
+.events-container {
   display: flex;
+  gap: 30px;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 10px 0;
+  height: 450px;
 }
 
-.card-scroll::-webkit-scrollbar {
-  display: none;
-}
-
+/* Event Card */
 .event-card {
-  flex: 1 1 calc(33.333% - 16px); /* 3 cards per row for desktop */
-  max-width: calc(33.333% - 16px);
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.event-image {
-  height: 150px;
-  background: #ddd;
   position: relative;
-}
-
-.price-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ff5722;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.event-details {
-  padding: 15px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  flex: 1;
+  display: flexbox;
+  flex-direction: column;
   text-align: left;
 }
 
 .event-date {
+  background: #7d0024;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
   font-size: 14px;
-  color: #888;
-  margin: 0;
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.event-day {
+  font-size: 40px;
+}
+
+.event-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 10px 15px;
+  max-height: 190px;
+  overflow: hidden;
 }
 
 .event-title {
-  font-size: 18px;
-  color: #333;
-  margin: 8px 0;
+  font-size: 27px;
+  margin: 10px 0;
 }
 
-.event-location {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
+.event-description {
+  font-size: 16px;
+  text-align: justify;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.event-actions {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.bookmark-btn,
-.share-btn {
-  background: #f1f1f1;
+.learn-more {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  background: #7d0024;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
   cursor: pointer;
 }
 
-.bookmark-btn:hover,
-.share-btn:hover {
-  background: #ddd;
+.learn-more:hover {
+  background: #5a001a;
 }
 
-@media (max-width: 768px) {
-  .card-scroll {
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Scroll effect for mobile */
+/* See All Events Button */
+.see-all-events {
+  margin: 40px 0;
+  padding: 10px 30px;
+  border: 2px solid #7d0024;
+  background: transparent;
+  color: #7d0024;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.see-all-events:hover {
+  background: #7d0024;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (width < 900px) {
+  .events-container {
+    flex-direction: column;
+    align-items: center;
+    height: 1300px;
   }
 
   .event-card {
-    flex: 0 0 80%; /* 80% width for mobile cards */
-    max-width: 80%;
+    width: 100%;
+    flex-direction: column;
   }
 }

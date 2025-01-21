@@ -243,6 +243,15 @@ form {
 	.toggle-panel h1 {
 		font-size: 30px;
 	}
+
+	.container1 h1 {
+		font-size: 25px;
+	}
+
+	.container1 p {
+		font-size: 13px;
+		text-align: center;
+	}
 }
 
 .error-message {
