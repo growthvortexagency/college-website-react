@@ -1,9 +1,9 @@
 // EventCards.js
 import React from "react";
 import "../styles/EventCards.css";
-import img1 from '../assets/images/_DSC6174.JPG'
-import img2 from '../assets/images/DSC_1703.JPG'
-import img3 from '../assets/images/DSC00138.JPG'
+import img1 from '../assets/images/Onam.webp'
+import img2 from '../assets/images/Blood.webp'
+import img3 from '../assets/images/Web.webp'
 
 const events = [
   {

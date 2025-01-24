@@ -1,8 +1,8 @@
 import React from 'react'
 import logo from '../assets/images/college_logo_name.png'
-import divyashree from '../assets/images/Divyashree.png'
-import divakar from '../assets/images/Divakar.png'
-import abhishek from '../assets/images/Abhishek.png'
+import divyashree from '../assets/images/Divyashree.webp'
+import divakar from '../assets/images/Divakar.webp'
+import abhishek from '../assets/images/Abhishek.webp'
 import { ReactComponent as Facebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as Instagram } from '../assets/icons/instagram.svg';
 import { ReactComponent as Threads } from '../assets/icons/threads.svg';
