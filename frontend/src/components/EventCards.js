@@ -1,4 +1,3 @@
-// EventCards.js
 import React from "react";
 import "../styles/EventCards.css";
 import img1 from '../assets/images/_DSC6174.JPG'

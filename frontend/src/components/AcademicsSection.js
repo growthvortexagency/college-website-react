@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/AcademicsSection.css'
-import BCAimage from '../assets/images/bca_course_image.jpg'
+import BCAimage from '../assets/images/bca_course_image.webp'
 import BCOMimage from '../assets/images/BCOM_Course_Image.webp'
-import BBAimage from '../assets/images/BBA_Course_Image.avif'
+import BBAimage from '../assets/images/BBA_Course_Image.webp'
 
 const AcademicsSection = () => {
     return (

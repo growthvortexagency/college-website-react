@@ -1,8 +1,9 @@
 import React from 'react'
-import logo from '../assets/images/college_logo_name.png'
-import divyashree from '../assets/images/Divyashree.png'
-import divakar from '../assets/images/Divakar.png'
-import abhishek from '../assets/images/Abhishek.png'
+import logo from '../assets/images/college_logo_name.webp'
+import divyashree from '../assets/images/Divyashree.webp'
+import divakar from '../assets/images/Divakar.webp'
+import abhishek from '../assets/images/Abhishek.webp'
+import arockyadoss from '../assets/images/Arockyadoss.webp'
 import { ReactComponent as Facebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as Instagram } from '../assets/icons/instagram.svg';
 import { ReactComponent as Threads } from '../assets/icons/threads.svg';
@@ -51,6 +52,14 @@ export const Footer = () => {
                         <img src={divakar} alt="Divakar S" />
                         <div>
                             <span>Divakar S</span>
+                            <span>Web Coordinator</span>
+                            <span>St. Anthony's College</span>
+                        </div>
+                    </div>
+                    <div className="coordinator">
+                        <img src={arockyadoss} alt="Arockyadoss M" />
+                        <div>
+                            <span>Arockyadoss M</span>
                             <span>Web Coordinator</span>
                             <span>St. Anthony's College</span>
                         </div>

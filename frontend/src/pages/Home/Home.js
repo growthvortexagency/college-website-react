@@ -2,6 +2,7 @@ import React from 'react'
 import EventCards from '../../components/EventCards'
 import VideoSection from '../../components/VideoSection'
 import AcademicsSection from '../../components/AcademicsSection'
+import UpcomingEvents from '../../components/UpcomingEvents'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <VideoSection/>
       <AcademicsSection/>
       <EventCards/>
+      <UpcomingEvents/>
     </div>
 
   )
