@@ -1,22 +1,22 @@
-.upcoming-events {
+.Uupcoming-events {
   text-align: center;
   padding: 20px;
 }
 
-.section-title {
+.Usection-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: black; /* Dark red color */
 }
 
-.section-description {
+.Usection-description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #333;
 }
 
 /* Event Cards Container */
-.events-container {
+.Uevents-container {
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -25,20 +25,21 @@
 }
 
 /* Event Card */
-.event-card {
+.Uevent-card {
   position: relative;
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.479);
+  box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.445);
   max-width: 400px;
   flex: 1;
   display: flexbox;
   flex-direction: column;
   text-align: left;
+  border-bottom: 10px solid #7d0024;
 }
 
-.event-date {
+.Uevent-date {
   background: #7d0024;
   color: #fff;
   padding: 10px 0;
@@ -51,38 +52,38 @@
   width: 80px;
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 0;
 }
 
-.event-day {
+.Uevent-day {
   font-size: 40px;
 }
 
-.event-image img {
+.Uevent-image img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.event-info {
+.Uevent-info {
   padding: 10px 15px;
   max-height: 190px;
   overflow: hidden;
 }
 
-.event-title {
+.Uevent-title {
   font-size: 27px;
   margin: 10px 0;
 }
 
-.event-description {
+.Uevent-description {
   font-size: 16px;
   text-align: justify;
   color: #555;
   margin-bottom: 15px;
 }
 
-.learn-more {
+.Ulearn-more {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -94,12 +95,12 @@
   cursor: pointer;
 }
 
-.learn-more:hover {
+.Ulearn-more:hover {
   background: #5a001a;
 }
 
 /* See All Events Button */
-.see-all-events {
+.Usee-all-events {
   margin: 40px 0;
   padding: 10px 30px;
   border: 2px solid #7d0024;
@@ -110,20 +111,20 @@
   font-size: 20px;
 }
 
-.see-all-events:hover {
+.Usee-all-events:hover {
   background: #7d0024;
   color: #fff;
 }
 
 /* Responsive Styles */
 @media (width < 900px) {
-  .events-container {
+  .Uevents-container {
     flex-direction: column;
     align-items: center;
     height: 1300px;
   }
 
-  .event-card {
+  .Uevent-card {
     width: 100%;
     flex-direction: column;
   }

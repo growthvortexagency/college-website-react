@@ -1,4 +1,3 @@
-// EventCards.js
 import React from "react";
 import "../styles/EventCards.css";
 import img1 from '../assets/images/Onam.webp'
@@ -19,7 +18,7 @@ const events = [
     monthandyear: "OCT 2024",
     title: "Blood donation",
     description: "Blood donation drive was impactful, promoting awareness, saving lives and fostering a sense of responsibility and unity among all.",
-    image: img3,
+    image: img2,
   },
   {
   date: "22",
@@ -27,7 +26,7 @@ const events = [
   title: "Web Designing",
   description:
     "The college's Web Designing competition was vibrant, showcasing creative designs, innovative ideas and excellent technical skills, fostering learning and enthusiasm among all.",
-  image: img2,
+  image: img3,
   },
 ];
 
