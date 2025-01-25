@@ -4,6 +4,7 @@ import VideoSection from '../../components/VideoSection'
 import AcademicsSection from '../../components/AcademicsSection'
 import UpcomingEvents from '../../components/UpcomingEvents'
 import StudentsLife from '../../components/StudentsLife'
+import ApplyNow from '../../components/ApplyNow'
 
 const Home = () => {
   return (
@@ -13,8 +14,8 @@ const Home = () => {
       <StudentsLife/>
       <EventCards/>
       <UpcomingEvents/>
+      <ApplyNow/>
     </div>
-
   )
 }
 

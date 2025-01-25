@@ -1,6 +1,9 @@
 import React from 'react'
 import '../styles/StudentsLife.css'
 import library from '../assets/images/library.webp'
+import campuslife from '../assets/images/campuslife.webp'
+import sports from '../assets/images/sports.webp'
+import NCC from '../assets/images/NCC.webp'
 
 const StudentsLife = () => {
     return (
@@ -12,7 +15,7 @@ const StudentsLife = () => {
             <div class="studentslife-container">
                 <div class="studentslife-card">
                     <div class="card-header">
-                        <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
+                        <img src={campuslife} alt="city" />
                     </div>
                     <div class="card-body">
                         <h4>
@@ -40,7 +43,7 @@ const StudentsLife = () => {
                 </div>
                 <div class="studentslife-card">
                     <div class="card-header">
-                        <img src="https://www.newsbtc.com/wp-content/uploads/2020/06/mesut-kaya-LcCdl__-kO0-unsplash-scaled.jpg" alt="ballons" />
+                        <img src={sports} alt="ballons" />
                     </div>
                     <div class="card-body">
                         <h4>
@@ -54,14 +57,14 @@ const StudentsLife = () => {
                 </div>
                 <div class="studentslife-card">
                     <div class="card-header">
-                        <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
+                        <img src={NCC} alt="city" />
                     </div>
                     <div class="card-body">
                         <h4>
                             NCC
                         </h4>
                         <p>
-                            The NCC nurtures discipline, leadership, and patriotism through training and activities. it's a platform for students
+                            The NCC nurtures discipline, leadership, and patriotism through training and activities. It's a platform for students
                             to develop life skills and serve the nation with pride.
                         </p>
                     </div>

@@ -38,8 +38,13 @@
   text-align: left;
 }
 
+.event-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 .event-date {
-  background: #7d0024;
+  background: rgb(3, 39, 137);
   color: #fff;
   padding: 10px 0;
   text-align: center;
@@ -87,7 +92,7 @@
   bottom: 0;
   width: 100%;
   font-size: 20px;
-  background: #7d0024;
+  background: rgb(3, 39, 137);
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -95,23 +100,23 @@
 }
 
 .learn-more:hover {
-  background: #5a001a;
+  background: rgb(7, 57, 193);
 }
 
 /* See All Events Button */
 .see-all-events {
   margin: 40px 0;
   padding: 10px 30px;
-  border: 2px solid #7d0024;
+  border: 2px solid rgb(3, 39, 137);
   background: transparent;
-  color: #7d0024;
+  color: rgb(20, 77, 235);
   border-radius: 50px;
   cursor: pointer;
   font-size: 20px;
 }
 
 .see-all-events:hover {
-  background: #7d0024;
+  background: rgb(7, 57, 193);
   color: #fff;
 }
 

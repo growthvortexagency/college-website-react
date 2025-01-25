@@ -7,16 +7,6 @@
     text-align: center;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: #f7f8fc;
-  font-family: "Roboto", sans-serif;
-  color: #10182f;
-}
-
 .studentslife-container {
   display: flex;
   width: 100%;
@@ -31,7 +21,12 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 330px;
+  width: 300px;
+}
+
+.studentslife-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .card-header img {
