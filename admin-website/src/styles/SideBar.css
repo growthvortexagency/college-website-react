@@ -1,0 +1,54 @@
+.sidebar {
+    height: 100vh;
+    background-color: #18181B;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar.open {
+    width: 18rem;
+    padding: 1.25rem;
+    padding-top: 2rem;
+  }
+  
+  .sidebar.closed {
+    width: 5rem;
+    padding: 1rem;
+  }
+
+  .toggle-button {
+    position: absolute;
+    cursor: pointer;
+    right: -1rem;
+    top: 2.25rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.125rem;
+    background-color: #FAFAFA;
+    border: 2px solid #FAFAFA;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .toggle-button.active {
+    transform: rotate(180deg);
+  }
+  
+
+  .logo-section {
+    display: flex; /* Creates a flex container */
+    gap: 1rem; /* Horizontal gap of 16px between items */
+    align-items: center; /* Aligns items vertically in the center */
+  }
+
+  .menu-items {
+    padding-top: 1.5rem;
+  }
+  
+  .menu-items > * + * {
+    margin-top: 0.125rem;
+  }
