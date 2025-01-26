@@ -112,3 +112,42 @@
   .info li {
     font-size: 20px;
   }
+
+  .info-icons {
+    flex-shrink: 0;
+  }
+
+  @media (width < 768px) {
+    .contact-section {
+      margin: 0 10px 10px 10px;
+      overflow: hidden;
+    }
+
+    .info li {
+      font-size: 15px;
+    }
+  }
+
+  @media (width < 320px) {
+    .contact-section {
+      margin: 0 10px 10px 10px;
+      overflow: hidden;
+    }
+
+    .info li {
+      font-size: 12px;
+    }
+    
+    .info-icons {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-description {
+      font-size: 0.9rem;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+    }
+  }

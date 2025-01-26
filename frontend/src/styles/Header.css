@@ -27,3 +27,24 @@
 .event-container h1 {
     text-align: center;
 }
+
+@media (width < 750px) {
+    .header-part {
+        width: 120%;
+        margin-left: -10%;
+    }
+
+    .overlay-logos {
+        flex-direction: row;
+        justify-content: center;
+        gap: 62%;
+    }
+
+    .college-logo {
+        width: 11%;
+    }
+
+    .padua-logo {
+        width: 10%
+    }
+}

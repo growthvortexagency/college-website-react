@@ -1,10 +1,10 @@
 import React from 'react'
-import EventCards from '../../components/EventCards'
-import VideoSection from '../../components/VideoSection'
-import AcademicsSection from '../../components/AcademicsSection'
-import UpcomingEvents from '../../components/UpcomingEvents'
-import StudentsLife from '../../components/StudentsLife'
-import ApplyNow from '../../components/ApplyNow'
+import EventCards from '../../section/EventCards'
+import VideoSection from '../../section/VideoSection'
+import AcademicsSection from '../../section/AcademicsSection'
+import UpcomingEvents from '../../section/UpcomingEvents'
+import StudentsLife from '../../section/StudentsLife'
+import ApplyNow from '../../section/ApplyNow'
 
 const Home = () => {
   return (
