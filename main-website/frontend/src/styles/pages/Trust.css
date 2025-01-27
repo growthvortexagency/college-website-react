@@ -1,0 +1,54 @@
+.trust-text-box h2 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.trust-paragraph p {
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.trust-container {
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    display: flex;
+    margin-top: 30px;
+}
+
+.trust-wrapper img {
+    width: 300px;
+    border-radius: 20px;
+    float: left;
+    margin: 20px;
+}
+
+.trust-wrapper {
+    width: 95%;
+}
+
+@media (width < 500px) {
+    .trust-wrapper img {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .trust-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .trust-paragraph p {
+        font-size: 16px;
+    }
+
+    .trust-text-box h2, .trust-paragraph h3 {
+        text-align: center;
+    }
+}
+
+.trust-paragraph h3 {
+    font-size: 1.4rem;
+}

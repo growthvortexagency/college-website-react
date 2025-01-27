@@ -1,0 +1,41 @@
+.patron-text-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.patron-paragraph p {
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.patron-container {
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    display: flex;
+}
+
+.patron-wrapper img {
+    width: 300px;
+    border-radius: 20px;
+    float: left;
+    margin-right: 20px;
+}
+
+.patron-wrapper {
+    width: 95%;
+}
+
+@media (width < 500px) {
+    .patron-wrapper img {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .patron-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
