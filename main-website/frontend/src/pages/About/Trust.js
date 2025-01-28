@@ -41,7 +41,7 @@ const Trust = () => {
               constitutes one single unit with one goal, one ideal and one system of organisation that goes to make one 
               single tradition.
             </p>
-            <p>More Details visit our website: <a href='www.capuchineducation.com'>www.capuchineducation.com</a></p>
+            <p>More Details visit our website: {""} <a href='https://www.capuchineducation.com' rel="noopener noreferrer">www.capuchineducation.com</a></p>
           </div>
         </div>
       </div>

@@ -52,3 +52,116 @@
   .menu-items > * + * {
     margin-top: 0.125rem;
   }
+
+  .logo-section {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .college-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .college-name {
+    color: #fafafa;
+    transform-origin: left;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .college-name.closed {
+    transform: scale(0);
+  }
+  
+  .menus {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: #fafafa;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menus:hover {
+    background-color: rgba(39, 39, 42, 0.5);
+    color: white;
+  }
+  
+  .highlight {
+    background-color: rgba(39, 39, 42, 0.4);
+  }
+  
+  .menu-icon {
+    font-size: 1.125rem;
+  }
+
+  .menu-title {
+    transform-origin: left;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+    
+  .hidden {
+    display: none;
+  }
+
+  .sub-menu {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .rotated {
+    transform: rotate(90deg);
+  }
+  
+  .submenu-hidden {
+    display: none;
+  }
+
+  .ul-items {
+    padding-left: 0.75rem;
+    padding-top: 1rem;
+    color: #d4d4d8;
+  }
+
+  .li-items {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .li-items:hover {
+    background-color: #27272a;
+  }
+
+  .submenu-icon {
+    font-size: 0.75rem;
+  }
+
+  .icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
