@@ -89,11 +89,11 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <div className='container'>
-        <AppContent />
-      </div>
-    </Router>
+      <Router>
+        <div className='container'>
+          <AppContent />
+        </div>
+      </Router>
   );
 }
 

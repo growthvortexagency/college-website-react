@@ -3,6 +3,7 @@ import '../styles/AcademicsSection.css'
 import BCAimage from '../assets/images/BCA.webp'
 import BCOMimage from '../assets/images/BCOM.webp'
 import BBAimage from '../assets/images/BBA.webp'
+import { Link } from "react-router-dom";
 
 const AcademicsSection = () => {
     return (
@@ -21,7 +22,7 @@ const AcademicsSection = () => {
                             An undergraduate degree covering accounting, finance,
                             business law, economics, and marketing principles.
                         </p>
-                        <a href="#">B.Com Course &rsaquo;</a>
+                        <Link to="/academics/commerce">B.Com Course &rsaquo;</Link>
                     </div>
                     <div class="card">
                         <img src={BCAimage} alt="BCA Course" />
@@ -30,7 +31,7 @@ const AcademicsSection = () => {
                             A program focused on software development, programming
                             languages, computer networks, and IT systems management.
                         </p>
-                        <a href="#">BCA Course &rsaquo;</a>
+                        <Link to="/academics/ComputerApplications">BCA Course &rsaquo;</Link>
                     </div>
                     <div class="card">
                         <img src={BBAimage} alt="Driving Impact" />
@@ -39,12 +40,11 @@ const AcademicsSection = () => {
                             A course designed to develop managerial skills, leadership,
                             marketing, economics, and business strategy knowledge.
                         </p>
-                        <a href="#">BBA Course &rsaquo;</a>
+                        <Link to="/academics/Management">BBA Course &rsaquo;</Link>
                     </div>
                 </div>
             </div>
         </section>
-
     )
 }
 
