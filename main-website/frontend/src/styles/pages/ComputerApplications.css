@@ -1,11 +1,11 @@
-.commerce-container {
+.management-container {
     width: 100%;
     height: auto;
     justify-content: center;
     background-color:rgb(239, 239, 239);
 }
 
-.about-commerce {
+.about-management {
     max-width: 90vw;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
     margin: 20px auto;
 }
 
-.commerce-headline {
+.management-headline {
     text-align: center;
     width: 100%;
     font-size: 2rem;
@@ -29,50 +29,50 @@
     justify-content: center;
 }
 
-.commerce-content-container img {
-    width: 220px;
+.management-content-container img {
+    width: 300px;
     border-radius: 20px;
     margin-right: 20px;
     float: left;
 }
 
-.about-commerce h1 {
+.about-management h1 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.commerce-content-container {
+.management-content-container {
     gap: 20px;
 }
 
-.commerce-content-container p {
-    font-size: 1.6rem;
+.management-content-container p {
+    font-size: 1.5rem;
     text-align: justify; 
 }
 
-.commerce-content-container p:nth-of-type(1) {
+.management-content-container p:nth-of-type(1) {
     margin-bottom: 10px;
 }
 
 @media (width < 650px) {
-    .about-commerce h1 {
+    .about-management h1 {
         font-size: 25px;
     }
 
-    .commerce-content-container p {
+    .management-content-container p {
         text-align: left;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
 }
 
 @media (width < 400px) {
-    .commerce-content-container {
+    .management-content-container {
         display: flex;
         flex-direction: column;
     }
 }
 
-.vision-commerce {
+.vision-management {
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
@@ -86,28 +86,33 @@
     text-align: center;
 }
 
-.vision-commerce h2 {
+.vision-mission-container {
+    max-width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.vision-management h2 {
     font-size: 37px;
     margin-bottom: 10px;
 }
 
-.vision-commerce p {
-    font-size: 24px;
+.vision-management p {
+    font-size: 25px;
 }
 
-@media (max-width: 768px) {
-    .vision-commerce {
+.vision-management h2:nth-of-type(2) {
+    margin-top: 40px;
+}
+
+@media (width < 768px) {
+    .vision-management {
         flex-direction: column;
         gap: 25px;
-    }
-
-    .vision-commerce p {
-        font-size: 22px;
-    }
-
-    .vision-commerce h2 {
-        font-size: 34px;
-        margin-bottom: 10px;
     }
 }
 

@@ -28,66 +28,78 @@ const Commerce = () => {
           </p>
         </div>
       </div>
-      <div className='vandm-commerce'>
-        <div className="vision-mission-container">
-          <div className="icon">🌟</div>
-          <h2>Our Vision</h2>
-          <p>
-            To nurture and develop competent, ethical, and innovative commerce professionals with a strong foundation in
-            business principles, leadership skills, and a global perspective, empowering them to thrive in the ever-evolving
-            world of commerce and finance.
-          </p>
-        </div>
-        <div className="vision-mission-container">
-          <div className="icon">🎯</div>
-          <h2>Our Mission</h2>
-          <p>
-            To provide quality education in commerce, foster critical thinking and ethical practices, and equip students
-            with advanced skills, practical knowledge, and innovative approaches to excel in an ever-changing and dynamic
-            global business environment.
-          </p>
-        </div>
-      </div>
-      <div className="placement-section">
-        <div className="placement-header">
-          <h2>Placement Excellence</h2>
-        </div>
-        <p className="placement-paragraph">
-          A total of <strong>174 students</strong> have been successfully placed in renowned companies such as
-          <strong> Infosys, Wipro, Piramal, Spectrum Management, and Axis Bank.</strong> This accomplishment reflects the
-          strong foundation andindustry-relevant skills our students possess, showcasing the effectiveness of our
-          comprehensive
-          academic programs and commitment to preparing them for global career opportunities.
+      <div className='vision-commerce'>
+        <h2>Our Vision</h2>
+        <p>
+          To Inculcate knowledge, skills and abilities of commerce students in building
+          sustainable local and global business operations.
         </p>
       </div>
-      <div className="career">
-        <div className="career-section">
-          <h1>Career Opportunities</h1>
-          <p>Explore the benefits of joining our team. We offer a range of career opportunities with great features and
-            benefits.</p>
-          <div className="benefits">
-            <div className="benefit-item">
-              <div className="check-icon">✔</div>
-              <h3>Accounting and Finance</h3>
-              <p>Bookkeeping, budgeting, auditing, taxation, investment, assets, liabilities, profit, revenue, cash flow.
-              </p>
+      <div className="mission-section">
+        <h2>Our Mission</h2>
+        <div className='mission-points'>
+          <div className='mission-item'>
+            <div className='circle'>
+              <p className='number'>01</p>
             </div>
-            <div className="benefit-item">
-              <div className="check-icon">✔</div>
-              <h3>Banking and Insurance</h3>
-              <p>Loans, deposits, interest, credit, risk management, premiums, claims, underwriting, savings, policies.</p>
+            <p>By fostering critical thinking, innovation, and ethical values in decision making.</p>
+          </div>
+          <div className='mission-item'>
+            <div className='circle'>
+              <p className='number'>02</p>
             </div>
-            <div className="benefit-item">
-              <div className="check-icon">✔</div>
-              <h3>Corporate Sector</h3>
-              <p>Business, management, strategy, operations, growth, leadership, innovation, mergers, profits, stakeholders.
-              </p>
+            <p>By providing experiential learning opportunities through internships and industry partnerships.</p>
+          </div>
+          <div className='mission-item'>
+            <div className='circle'>
+              <p className='number'>03</p>
             </div>
-            <div className="benefit-item">
-              <div className="check-icon">✔</div>
-              <h3>Entrepreneurship</h3>
-              <p>Startups, innovation, risk-taking, leadership, vision, investment, growth, creativity, scalability,
-                resilience.</p>
+            <p>By collaborating with industries for academic and professional growth.</p>
+          </div>
+          <div className='mission-item'>
+            <div className='circle'>
+              <p className='number'>04</p>
+            </div>
+            <p>By developing a safe and inclusive learning ecosystem to meet academic, industry standards and expectations.</p>
+          </div>
+        </div>
+      </div>
+      <div className='commerce-objectives'>
+        <h1 class="obj-title">Our Objectives</h1>
+        <div class="obj-container">
+          <div class="obj-card">
+            <div class="obj-number">1</div>
+            <div className='obj-wrapper'>
+              <h2 class="obj-card-title">Commerce Insight</h2>
+              <p class="obj-card-text">To demonstrate comprehensive knowledge and understanding of contemporary 
+                commerce trends, practices, and innovations, showcasing awareness of global market dynamics, 
+                competitive strategies, and emerging business opportunities.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-number">2</div>
+            <div className='obj-wrapper'>
+              <h2 class="obj-card-title">Skill Development</h2>
+              <p class="obj-card-text">To foster and enhance proficiency across various disciplines, including 
+                accounting, marketing, research, sales, finance, banking, and insurance, enabling versatile expertise 
+                and adaptability in today's dynamic business environment.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-number">3</div>
+            <div className='obj-wrapper'>
+              <h2 class="obj-card-title">Analytical Thinking</h2>
+              <p class="obj-card-text">To develop and strengthen the ability to think critically and analytically, 
+                enabling individuals to assess situations, identify patterns, solve problems, and make well-informed 
+                decisions based on logical reasoning.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-number">4</div>
+            <div className='obj-wrapper'>
+              <h2 class="obj-card-title">Higher Education Awareness</h2>
+              <p class="obj-card-text">To educate students about diverse opportunities in higher studies, including M.Com, 
+                CA, CMA, CS, Ph.D., and other advanced programs, guiding them toward informed academic and professional pursuits.</p>
             </div>
           </div>
         </div>
