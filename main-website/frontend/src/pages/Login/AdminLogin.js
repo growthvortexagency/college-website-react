@@ -1,65 +1,69 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/pages/AdminLogin.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../styles/pages/AdminLogin.css";
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch('http://localhost:5000/api/admin/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/api/admin/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
-        credentials: 'include',
+        credentials: "include", // Allow cookies for session handling
       });
 
       if (response.ok) {
-        navigate('/admindashboard');
+        navigate("/admin-dashboard");
       } else {
-        setError('Invalid username or password');
+        const result = await response.json();
+        setError(result.message);
       }
     } catch (err) {
-      setError('Server error. Please try again later.');
+      setError("Server error, please try again.");
     }
   };
 
   return (
     <div className="admin-login-container">
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleLogin}>
-          <h2>Admin Login</h2>
-          {error && <p className="error-message">{error}</p>}
-          <div className="input-group">
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <label>Username</label>
-          </div>
-          <div className="input-group">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <label>Password</label>
-          </div>
-          <button type="submit" className="login-button">Login</button>
-        </form>
+      <div className="background">
+        <div className="shape"></div>
+        <div className="shape"></div>
       </div>
+      <form onSubmit={handleLogin}>
+        <h3>Login Here</h3>
+
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          placeholder="Email or Phone"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Log In</button>
+      </form>
     </div>
   );
 };
 
-export default AdminLogin
+export default AdminLogin;
