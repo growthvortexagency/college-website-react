@@ -52,14 +52,16 @@
   
   .fac-card {
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 4px 20px 7px;
     display: flex;
+    border-radius: 10px;
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    padding-right: 15px;
+    padding-right: 20px;
     padding-bottom: 30px;
-    padding-left: 15px;
+    padding-left: 20px;
+    background:rgb(238, 238, 238);
   }
   
   .card-container {
@@ -95,12 +97,6 @@
     line-height: 30px;
   }
   
-  .social-icons {
-    width: 70px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
   .team-image-wrapper {
     clip-path: circle(50% at 50% 50%);
     width: 130px;
@@ -118,6 +114,9 @@
       margin-right: 0px;
       margin-bottom: 25px;
       margin-left: 0px;
+    }
+    .team-head-text {
+      font-size: 30px;
     }
   }
 

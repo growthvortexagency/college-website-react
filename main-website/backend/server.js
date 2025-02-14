@@ -73,6 +73,68 @@ app.get("/api/admin/check-session", requireAuth, (req, res) => {
   res.status(200).json({ message: "Session is valid" });
 });
 
+///////////////////////
+// Faculty Routes
+///////////////////////
+
+// Fetch all faculties
+app.get("/api/faculties", requireAuth, (req, res) => {
+  const query = "SELECT * FROM faculties_page_table";
+  db.query(query, (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+    res.json(results);
+  });
+});
+
+// Add a new faculty
+app.post("/api/faculties", requireAuth, (req, res) => {
+  const { name, department, qualifications, role, image_url } = req.body;
+
+  const query =
+    "INSERT INTO faculties_page_table (name, department, qualifications, role, image_url) VALUES (?, ?, ?, ?, ?)";
+  db.query(
+    query,
+    [name, department, qualifications, role, image_url],
+    (err) => {
+      if (err) return res.status(500).json({ message: "Database error" });
+      res.json({ message: "Faculty added successfully" });
+    }
+  );
+});
+
+///////////////////////
+// Department Routes
+///////////////////////
+
+// Fetch all departments
+app.get("/api/departments", requireAuth, (req, res) => {
+  const query = "SELECT * FROM departments_faculties_page_table";
+  db.query(query, (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+    res.json(results);
+  });
+});
+
+// Add a new department
+app.post("/api/departments", requireAuth, (req, res) => {
+  const { departmentName } = req.body;
+  const query = "INSERT INTO departments_faculties_page_table (name) VALUES (?)";
+  db.query(query, [departmentName], (err) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+    res.json({ message: "Department added successfully" });
+  });
+});
+
+// Delete department
+app.delete("/api/departments/:id", requireAuth, (req, res) => {
+  const { id } = req.params;
+  const query = "DELETE FROM departments_faculties_page_table WHERE id = ?";
+  db.query(query, [id], (err) => {
+    if (err) return res.status(500).json({ message: "Database error" });
+    res.json({ message: "Department deleted successfully" });
+  });
+});
+
 // Start the server
 app.listen(5000, () => {
   console.log("Server running on port 5000");

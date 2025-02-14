@@ -53,12 +53,12 @@ form {
 	margin: -10px 0;
 }
 
-.input-box {
+.body .input-box {
 	position: relative;
 	margin: 30px 0;
 }
 
-.input-box input {
+.body .input-box input {
 	width: 100%;
 	padding: 13px 50px 13px 20px;
 	background: #eee;
@@ -66,13 +66,12 @@ form {
 	border: none;
 	outline: none;
 	font-size: 16px;
-	color: #333;
 	font-weight: 500;
 }
 
-.input-box input:placeholder {
-	color: #888;
+.body .input-box input:placeholder {
 	font-weight: 400;
+	color: #000000;
 }
 
 .input-box .icon {
@@ -265,4 +264,5 @@ form {
 	margin-top: 10px;
 	text-align: center;
   }
+
   

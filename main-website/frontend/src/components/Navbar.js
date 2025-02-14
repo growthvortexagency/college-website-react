@@ -67,7 +67,7 @@ function Navbar() {
       <div className="dropdown">
         <Link to="/login">Login ▼<span></span></Link>
         <div className="login dropdown-content">
-          <Link to="/login/adminlogin">Admin Login<span></span></Link>
+          <Link to="/admin-dashboard">Admin Login<span></span></Link>
           <Link to="/login/staffslogin">Staffs Login<span></span></Link>
           <Link to="/login/studentslogin">Students Login<span></span></Link>
         </div>
@@ -149,7 +149,7 @@ function Navbar() {
           </div>
           {activeDropdown === "login" && (
             <div className="mobile-dropdown-content">
-              <Link to="/login/adminlogin" onClick={toggleSidebar}>Admin Login</Link>
+              <Link to="/admin-dashboard" onClick={toggleSidebar}>Admin Login</Link>
               <Link to="/login/staffslogin" onClick={toggleSidebar}>Staffs Login</Link>
               <Link to="/login/studentslogin" onClick={toggleSidebar}>Students Login</Link>
             </div>

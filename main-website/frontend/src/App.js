@@ -41,10 +41,12 @@ function AppContent() {
 
   // Define routes where Header and Navbar should not appear
   const noHeaderNavbarRoutes = [
-    "/adminlogin",
+    "/login/adminlogin",
     "/login/staffslogin",
     "/login/studentslogin",
-    "/admin-dashboard"
+    "/admin-dashboard",
+    "/admin-dashboard/dashboard",
+    "/admin-dashboard/faculties"
   ];
 
   const shouldHideHeaderNavbar = noHeaderNavbarRoutes.includes(location.pathname);
@@ -78,11 +80,11 @@ function AppContent() {
         <Route path="/Committees" element={<Committees />} />
         <Route path="/IQAC" element={<IQAC />} />
         <Route path="/Newsletter" element={<Newsletter />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/Login/AdminLogin" element={<AdminLogin />} />
         <Route path="/Login/StaffsLogin" element={<StaffsLogin />} />
         <Route path="/Login/StudentsLogin" element={<StudentsLogin />} />
         <Route path="/Dashboards/StaffDashboard" element={<StaffDashboard />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-dashboard/*" element={<AdminDashboard />} />
       </Routes>
       {!shouldHideHeaderNavbar && <Footer />}
     </>
