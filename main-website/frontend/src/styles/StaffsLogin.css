@@ -55,7 +55,7 @@ form {
 
 .body .input-box {
 	position: relative;
-	margin: 30px 0;
+	margin: 15px 0;
 }
 
 .body .input-box input {
@@ -69,9 +69,24 @@ form {
 	font-weight: 500;
 }
 
-.body .input-box input:placeholder {
-	font-weight: 400;
-	color: #000000;
+.input-box select {
+	width: 100%;
+	padding: 13px 50px 13px 20px;
+	background: #eee;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	font-weight: 500;
+	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+	color: #000;
+}
+
+select option:first-child {
+	color: #888;
 }
 
 .input-box .icon {
@@ -80,7 +95,7 @@ form {
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 20px;
-	color: #888;
+	fill: #888;
 }
 
 .forgot-link {
@@ -185,6 +200,7 @@ form {
 
 	.toggle-panel p {
 		margin: 10px;
+		text-align: center;
 	}
 
 	.form-box {
@@ -240,7 +256,7 @@ form {
 	}
 
 	.toggle-panel h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 
 	.container1 h1 {
@@ -255,14 +271,17 @@ form {
 
 .error-message {
 	color: red;
-	font-size: 0.9em;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 10px;
   }
   
   .success-message {
 	color: green;
-	font-size: 1em;
-	margin-top: 10px;
 	text-align: center;
+	font-size: 14px;
+	margin: 20px;
   }
+  
 
   

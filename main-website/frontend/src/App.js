@@ -42,6 +42,7 @@ function AppContent() {
   // Define routes where Header and Navbar should not appear
   const noHeaderNavbarRoutes = [
     "/login/adminlogin",
+    "/Dashboards/StaffDashboard",
     "/login/staffslogin",
     "/login/studentslogin",
     "/admin-dashboard",

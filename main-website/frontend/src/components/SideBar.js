@@ -59,7 +59,7 @@ const SideBar = () => {
     <div className={`admin-sidebar ${open ? "admin-open" : "admin-closed"}`}>
       <div className='admin-logo-section'>
         <img src={Logo} alt='logo' className='admin-college-logo' />
-        <h1 className={`college-name ${!open ? "admin-closed" : ""}`}>Admin Dashboard</h1>
+        <h1 className={`college-name ${!open ? "admin-closed" : ""}`}>Faculty Dashboard</h1>
       </div>
       <ul className='menu-items'>
         {Menus.map((Menu, index) => (

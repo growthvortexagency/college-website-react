@@ -65,7 +65,7 @@ function Navbar() {
       </div>
 
       <div className="dropdown">
-        <Link to="/login">Login ▼<span></span></Link>
+        <Link to="">Login ▼<span></span></Link>
         <div className="login dropdown-content">
           <Link to="/admin-dashboard">Admin Login<span></span></Link>
           <Link to="/login/staffslogin">Staffs Login<span></span></Link>

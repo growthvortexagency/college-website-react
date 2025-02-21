@@ -80,7 +80,7 @@
   font-size: 14px;
   font-weight: 300;
 }
-::placeholder{
+.admin-login-container input:placeholder{
   color: #e5e5e5;
 }
 .admin-login-container button {
