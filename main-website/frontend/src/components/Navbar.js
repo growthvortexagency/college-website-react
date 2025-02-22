@@ -32,11 +32,10 @@ function Navbar() {
         <div className="dropdown">
           <Link to="/infrastructure">Infrastructure ▼<span></span></Link>
           <div className="dropdown-content">
-            <Link to="/infrastructure/academicfacility">Academic Facility<span></span></Link>
-            <Link to="/infrastructure/healthandsafety">Health & Safety<span></span></Link>
-            <Link to="/infrastructure/oncampus">On Campus<span></span></Link>
-            <Link to="/infrastructure/sports">Sports<span></span></Link>
-            <Link to="/infrastructure/transportation">Transportation<span></span></Link>
+            <Link to="/infrastructure/academicfacility">Physical Facility<span></span></Link>
+            <Link to="/infrastructure/healthandsafety">Library as a Learning Resource<span></span></Link>
+            <Link to="/infrastructure/oncampus">IT Infrastructure<span></span></Link>
+            <Link to="/infrastructure/sports">Campus Infrastructure<span></span></Link>
           </div>
         </div>
         <div className="dropdown">
@@ -104,11 +103,10 @@ function Navbar() {
           </div>
           {activeDropdown === "infrastructure" && (
             <div className="mobile-dropdown-content">
-              <Link to="/infrastructure/academicfacility" onClick={toggleSidebar}>Academic Facility</Link>
-              <Link to="/infrastructure/healthandsafety" onClick={toggleSidebar}>Health & Safety</Link>
-              <Link to="/infrastructure/oncampus" onClick={toggleSidebar}>On Campus</Link>
-              <Link to="/infrastructure/sports" onClick={toggleSidebar}>Sports</Link>
-              <Link to="/infrastructure/transportation" onClick={toggleSidebar}>Transportation</Link>
+              <Link to="/infrastructure/academicfacility" onClick={toggleSidebar}>Physical Facility</Link>
+              <Link to="/infrastructure/healthandsafety" onClick={toggleSidebar}>Library as a Learning Resource</Link>
+              <Link to="/infrastructure/oncampus" onClick={toggleSidebar}>IT Infrastructure</Link>
+              <Link to="/infrastructure/sports" onClick={toggleSidebar}>Campus Infrastructure</Link>
             </div>
           )}
         </div>
