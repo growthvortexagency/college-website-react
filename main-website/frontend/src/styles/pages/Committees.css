@@ -16,6 +16,7 @@
 }
 
 .single-cards {
+    position: relative;
     border-radius: 20px;
     height: 410px;
     width: 400px;
@@ -40,7 +41,18 @@
 }
 
 .single-cards button {
+    position: absolute;
     width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 40px;
     border: none;
     background-color: rgb(0, 89, 255);
+    color: white;
+    font-style: bold;
+    font-size: 20px;
+}
+
+.single-cards button:hover {
+    background-color: rgb(1, 50, 142);
 }
