@@ -47,6 +47,7 @@ function AppContent() {
     "/login/studentslogin",
     "/admin-dashboard",
     "/admin-dashboard/dashboard",
+    "/admin-dashboard/newsandevents",
     "/admin-dashboard/faculties"
   ];
 
