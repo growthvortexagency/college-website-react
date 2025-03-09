@@ -1,22 +1,18 @@
 const db = require('../config/db');
 
-const Faculty = {
-  checkFacultyID: (facultyID, callback) => {
-    db.query('SELECT * FROM faculty WHERE facultyID = ?', [facultyID], callback);
-  },
-
-  registerFaculty: (data, callback) => {
-    const { facultyID, name, dob, department, phone, email, password } = data;
-    db.query(
-      'UPDATE faculty SET name=?, dob=?, department=?, phone=?, email=?, password=? WHERE facultyID=?',
-      [name, dob, department, phone, email, password, facultyID],
-      callback
-    );
-  },
-
-  loginFaculty: (facultyID, callback) => {
-    db.query('SELECT * FROM faculty WHERE facultyID = ?', [facultyID], callback);
+class Faculty {
+  static async findByFacultyID(facultyID) {
+    const [result] = await db.query('SELECT * FROM faculty WHERE facultyID = ?', [facultyID]);
+    return result[0];
   }
-};
+
+  static async registerFaculty({ facultyID, name, dob, department, phone, email, password }) {
+    const [result] = await db.query(
+      'INSERT INTO faculty (facultyID, name, dob, department, phone, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [facultyID, name, dob, department, phone, email, password]
+    );
+    return result;
+  }
+}
 
 module.exports = Faculty;

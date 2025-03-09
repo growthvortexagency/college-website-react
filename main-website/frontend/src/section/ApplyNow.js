@@ -1,27 +1,51 @@
-import React from 'react'
-import '../styles/ApplyNow.css'
+import React, { useState } from 'react';
+import '../styles/ApplyNow.css';
+import axios from 'axios';
 import { ReactComponent as Location } from '../assets/icons/location-dot-solid.svg';
 import { ReactComponent as Phone } from '../assets/icons/phone-solid.svg';
 import { ReactComponent as Telephone } from '../assets/icons/telephone-icon.svg';
 import { ReactComponent as Email } from '../assets/icons/envelope-solid.svg';
 
 const ApplyNow = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        course: '',
+        email: '',
+        contact: '',
+        message: ''
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const response = await axios.post('http://localhost:5000/api/apply', formData);
+            setResponseMessage(response.data.message);
+            setFormData({ name: '', course: '', email: '', contact: '', message: '' });
+        } catch (error) {
+            setResponseMessage('Failed to send application. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <section
-            className="contact-section"
-            style={{
-                backgroundImage: "url('https://source.unsplash.com/random')",
-            }}
-        >
+        <section className="contact-section">
             <div className="overlay"></div>
             <div className="contact-container">
-                {/* Left Section */}
                 <div className="contact-left">
                     <h2 className="contact-title">Apply Now</h2>
                     <p className="contact-description">
                         Take the first step toward your future! Fill out the form below to apply for your
-                        desired course and connect with our admissions team. Your journey to success starts
-                        here!
+                        desired course and connect with our admissions team. Your journey to success starts here!
                     </p>
                     <ul className="contact-info">
                         <div className='info'>
@@ -43,25 +67,27 @@ const ApplyNow = () => {
                     </ul>
                 </div>
 
-                {/* Right Section */}
                 <div className="contact-right">
-                    <form className="contact-form">
+                    <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Enter Student Name</label>
                             <input
                                 type="text"
                                 id="name"
                                 placeholder="Enter Your Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="course">Select Course</label>
-                            <select id="course" defaultValue="">
+                            <select id="course" value={formData.course} onChange={handleChange} required>
                                 <option value="" disabled>Select Course</option>
-                                <option value="bcom">B.Com</option>
-                                <option value="bba">BBA</option>
-                                <option value="bca">BCA</option>
+                                <option value="B.Com">B.Com</option>
+                                <option value="BBA">BBA</option>
+                                <option value="BCA">BCA</option>
                             </select>
                         </div>
 
@@ -71,6 +97,9 @@ const ApplyNow = () => {
                                 type="email"
                                 id="email"
                                 placeholder="Enter Your Email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
@@ -80,6 +109,9 @@ const ApplyNow = () => {
                                 type="tel"
                                 id="contact"
                                 placeholder="Enter Your Contact Number"
+                                value={formData.contact}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
@@ -89,17 +121,22 @@ const ApplyNow = () => {
                                 id="message"
                                 rows="4"
                                 placeholder="Enter Your Message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="submit-button">
-                            Send Us ➔
+                        <button type="submit" className="submit-button" disabled={loading}>
+                            {loading ? 'Sending...' : 'Send Us ➔'}
                         </button>
+
+                        {responseMessage && <p className="response-message">{responseMessage}</p>}
                     </form>
                 </div>
-            </div >
-        </section >
-    )
-}
+            </div>
+        </section>
+    );
+};
 
-export default ApplyNow
+export default ApplyNow;

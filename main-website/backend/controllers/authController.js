@@ -1,68 +1,55 @@
-const Faculty = require('../models/facultyModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Faculty = require('../models/facultyModel');
 
-exports.register = (req, res) => {
-  const { facultyID, name, dob, department, phone, email, password } = req.body;
+exports.register = async (req, res) => {
+  try {
+    const { facultyID, name, dob, department, phone, email, password } = req.body;
 
-  // Validate password (must be at least 8 characters with letters & numbers)
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  if (password && !passwordRegex.test(password)) {
-    return res.status(400).json({ message: 'Password must be at least 8 characters long and include both letters and numbers.' });
-  }
-
-  // Check if Faculty ID exists
-  Faculty.checkFacultyID(facultyID, (err, results) => {
-    if (err) return res.status(500).json({ message: 'Database error' });
-
-    if (results.length === 0) {
-      return res.status(400).json({ message: 'Invalid Faculty ID' });
+    // Check if Faculty ID exists in the database
+    const faculty = await Faculty.findByFacultyID(facultyID);
+    if (!faculty) {
+      return res.status(400).json({ message: "Invalid Faculty ID." });
     }
 
-    // If no additional data, just insert Faculty ID
-    if (!password) {
-      return res.status(200).json({ message: 'Faculty ID registered successfully' });
+    // Check if Faculty ID is already registered
+    if (faculty.password) {
+      return res.status(400).json({ message: "Faculty ID already registered." });
     }
 
     // Hash password before saving
-    bcrypt.hash(password, 10, (err, hashedPassword) => {
-      if (err) return res.status(500).json({ message: 'Error hashing password' });
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Update faculty details
-      Faculty.registerFaculty(
-        { facultyID, name, dob, department, phone, email, password: hashedPassword },
-        (err, results) => {
-          if (err) return res.status(500).json({ message: 'Database error' });
+    // Register the faculty
+    await Faculty.registerFaculty({ facultyID, name, dob, department, phone, email, password: hashedPassword });
 
-          res.status(200).json({ message: 'Registration successful!' });
-        }
-      );
-    });
-  });
+    res.status(201).json({ message: "Registration successful. Please login." });
+  } catch (error) {
+    res.status(500).json({ message: "Server error." });
+  }
 };
 
-exports.login = (req, res) => {
-  const { facultyID, password } = req.body;
+exports.login = async (req, res) => {
+  try {
+    const { facultyID, password } = req.body;
 
-  Faculty.loginFaculty(facultyID, (err, results) => {
-    if (err) return res.status(500).json({ message: 'Database error' });
-
-    if (results.length === 0) {
-      return res.status(400).json({ message: 'Faculty ID not found' });
+    // Find faculty by ID
+    const faculty = await Faculty.findByFacultyID(facultyID);
+    if (!faculty || !faculty.password) {
+      return res.status(400).json({ message: "Invalid Faculty ID or password." });
     }
 
-    const user = results[0];
+    // Compare passwords
+    const isMatch = await bcrypt.compare(password, faculty.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid Faculty ID or password." });
+    }
 
-    bcrypt.compare(password, user.password, (err, isMatch) => {
-      if (err) return res.status(500).json({ message: 'Error comparing passwords' });
+    // Generate JWT token
+    const token = jwt.sign({ facultyID: faculty.facultyID }, process.env.JWT_SECRET, { expiresIn: "2h" });
 
-      if (!isMatch) {
-        return res.status(400).json({ message: 'Incorrect password' });
-      }
-
-      const token = jwt.sign({ facultyID: user.facultyID }, 'secret_key', { expiresIn: '2h' });
-
-      res.status(200).json({ message: 'Login successful', token });
-    });
-  });
+    res.json({ message: "Login successful!", token });
+  } catch (error) {
+    res.status(500).json({ message: "Server error." });
+  }
 };
