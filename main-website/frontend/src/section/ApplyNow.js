@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef  } from 'react';
 import '../styles/ApplyNow.css';
 import axios from 'axios';
 import { ReactComponent as Location } from '../assets/icons/location-dot-solid.svg';
@@ -6,7 +6,7 @@ import { ReactComponent as Phone } from '../assets/icons/phone-solid.svg';
 import { ReactComponent as Telephone } from '../assets/icons/telephone-icon.svg';
 import { ReactComponent as Email } from '../assets/icons/envelope-solid.svg';
 
-const ApplyNow = () => {
+const ApplyNow = forwardRef((props, ref) => {
     const [formData, setFormData] = useState({
         name: '',
         course: '',
@@ -17,6 +17,7 @@ const ApplyNow = () => {
 
     const [loading, setLoading] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -30,6 +31,10 @@ const ApplyNow = () => {
             const response = await axios.post('http://localhost:5000/api/apply', formData);
             setResponseMessage(response.data.message);
             setFormData({ name: '', course: '', email: '', contact: '', message: '' });
+
+            // Show success popup for 2 seconds
+            setShowPopup(true);
+            setTimeout(() => setShowPopup(false), 2000);
         } catch (error) {
             setResponseMessage('Failed to send application. Please try again.');
         } finally {
@@ -38,7 +43,7 @@ const ApplyNow = () => {
     };
 
     return (
-        <section className="contact-section">
+        <section ref={ref} className="contact-section">
             <div className="overlay"></div>
             <div className="contact-container">
                 <div className="contact-left">
@@ -68,9 +73,10 @@ const ApplyNow = () => {
                 </div>
 
                 <div className="contact-right">
+                {showPopup && <div className="popup-message">Thanks for submitting the form.</div>}
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="name">Enter Student Name</label>
+                            <label htmlFor="name">Enter Student's Name</label>
                             <input
                                 type="text"
                                 id="name"
@@ -86,8 +92,10 @@ const ApplyNow = () => {
                             <select id="course" value={formData.course} onChange={handleChange} required>
                                 <option value="" disabled>Select Course</option>
                                 <option value="B.Com">B.Com</option>
+                                <option value="B.Com With CA">B.Com with CA</option>
+                                <option value="BCA with AI/ML">BCA with AI/ML</option>
+                                <option value="BCA with Data Science">BCA with Data Science</option>
                                 <option value="BBA">BBA</option>
-                                <option value="BCA">BCA</option>
                             </select>
                         </div>
 
@@ -137,6 +145,6 @@ const ApplyNow = () => {
             </div>
         </section>
     );
-};
+});
 
 export default ApplyNow;

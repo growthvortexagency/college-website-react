@@ -39,7 +39,6 @@ import AdminDashboard from "./pages/Dashboards/Admin/AdminDashboard";
 function AppContent() {
   const location = useLocation();
 
-  // Define routes where Header and Navbar should not appear
   const noHeaderNavbarRoutes = [
     "/login/adminlogin",
     "/Dashboards/StaffDashboard",

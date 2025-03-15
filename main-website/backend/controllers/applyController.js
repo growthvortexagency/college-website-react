@@ -1,29 +1,53 @@
-const transporter = require('../config/nodemailer');
+const ApplyModel = require('../models/ApplyModel');
+const nodemailer = require('nodemailer');
 
-const sendApplicationEmail = async (req, res) => {
-    const { name, course, email, contact, message } = req.body;
+exports.submitApplication = (req, res) => {
+    const formData = req.body;
+
+    ApplyModel.saveApplication(formData, (err, result) => {
+        if (err) {
+            console.error('Error saving application:', err);
+            return res.status(500).json({ message: 'Failed to save application.' });
+        }
+
+        // Send email notification
+        sendEmail(formData);
+
+        res.status(201).json({ message: 'Application submitted successfully!' });
+    });
+};
+
+exports.getApplications = (req, res) => {
+    ApplyModel.getAllApplications((err, results) => {
+        if (err) {
+            console.error('Error fetching applications:', err);
+            return res.status(500).json({ message: 'Failed to fetch applications.' });
+        }
+        res.status(200).json(results);
+    });
+};
+
+const sendEmail = (formData) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
+    });
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'aabbhhiisshheekk8887@gmail.com',
-        subject: 'New Course Application',
-        html: `
-            <h3>New Course Application</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Course:</strong> ${course}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Contact:</strong> ${contact}</p>
-            <p><strong>Message:</strong> ${message}</p>
-        `
+        to: process.env.COLLEGE_EMAIL,
+        subject: 'New Application Submission',
+        text: `New application received:\n\nName: ${formData.name}\nCourse: ${formData.course}\nEmail: ${formData.email}\nContact: ${formData.contact}\nMessage: ${formData.message}`
     };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        res.json({ message: 'Application sent successfully!' });
-    } catch (error) {
-        console.error('Error sending email:', error);
-        res.status(500).json({ message: 'Failed to send application' });
-    }
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error('Error sending email:', error);
+        } else {
+            console.log('Email sent:', info.response);
+        }
+    });
 };
-
-module.exports = { sendApplicationEmail };

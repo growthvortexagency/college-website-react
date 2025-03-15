@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { sendApplicationEmail } = require('../controllers/applyController');
-const validateForm = require('../middleware/validateForm');
+const ApplyController = require('../controllers/ApplyController');
 
-router.post('/apply', validateForm, sendApplicationEmail);
+router.post('/apply', ApplyController.submitApplication);
+router.get('/applications', ApplyController.getApplications);
 
 module.exports = router;

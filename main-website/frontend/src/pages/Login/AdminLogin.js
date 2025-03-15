@@ -1,33 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../styles/pages/AdminLogin.css";
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState("");
+  const [loginID, setLoginID] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/admin/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-        credentials: "include",
-      });
+    setLoading(true);
+    setMessage("");
 
-      if (response.ok) {
-        navigate("/admin-dashboard");
+    try {
+      const response = await axios.post("http://localhost:5000/auth/admin/login", { loginID, password });
+      
+      if (response.data.success) {
+        setMessage({ type: "success", text: "Login successful! Redirecting..." });
+
+        // Redirect to dashboard after 2 seconds
+        setTimeout(() => {
+          navigate("/admin-dashboard");
+        }, 2000);
       } else {
-        const result = await response.json();
-        setError(result.message);
+        setMessage({ type: "error", text: response.data.message });
       }
-    } catch (err) {
-      setError("Server error, please try again.");
+    } catch (error) {
+      setMessage({ type: "error", text: "Server error. Please try again later." });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,30 +41,38 @@ const AdminLogin = () => {
         <div className="shape"></div>
         <div className="shape"></div>
       </div>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <h3>Login Here</h3>
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
-
-        <label htmlFor="username">Username</label>
+        <label htmlFor="loginID">Login ID</label>
         <input
           type="text"
-          placeholder="Email or Phone"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter Login ID"
+          id="loginID"
+          value={loginID}
+          onChange={(e) => setLoginID(e.target.value)}
+          required
         />
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter Password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
-        <button type="submit">Log In</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Log In"}
+        </button>
+
+        {message && (
+          <p className={message.type === "success" ? "success-message" : "error-message"}>
+            {message.text}
+          </p>
+        )}
       </form>
     </div>
   );

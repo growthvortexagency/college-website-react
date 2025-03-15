@@ -4,16 +4,16 @@ import { ReactComponent as FacID } from '../../assets/icons/id-card-solid.svg';
 import { ReactComponent as Lock } from '../../assets/icons/lock-solid.svg';
 import { ReactComponent as Envelope } from '../../assets/icons/envelope-solid.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone-solid.svg';
-import { ReactComponent as Calendar } from '../../assets/icons/calendar-regular.svg';
 import { ReactComponent as Department } from '../../assets/icons/dashboard.svg';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const StaffsLogin = () => {
+  
   const [isActive, setIsActive] = useState(false);
   const [formData, setFormData] = useState({ 
-    facultyID: '', name: '', dob: '', department: '', phone: '', email: '', password: ''
+    facultyID: '', name: '', department: '', phone: '', email: '', password: ''
   });
   const [errors, setErrors] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -27,7 +27,7 @@ const StaffsLogin = () => {
 
   const handleRegisterClick = () => {
     setIsActive(true);
-    setFormData({ facultyID: '', name: '', dob: '', department: '', phone: '', email: '', password: '' });
+    setFormData({ facultyID: '', name: '', department: '', phone: '', email: '', password: '' });
   };
 
   const handleLoginClick = () => {
@@ -105,11 +105,6 @@ const StaffsLogin = () => {
               <input type="text" name="name" placeholder="Full Name" 
                 value={formData.name} onChange={handleInputChange} required />
               <User width='20px' height='20px' className='icon' />
-            </div>
-            <div className="input-box">
-              <input type="date" name="dob" placeholder="Date of Birth" 
-                value={formData.dob} onChange={handleInputChange} required />
-              <Calendar width='20px' height='20px' className='icon' />
             </div>
             <div className="input-box">
               <select name="department" value={formData.department} onChange={handleInputChange} required>
