@@ -16,12 +16,14 @@ const AdminLogin = () => {
     setMessage("");
 
     try {
-      const response = await axios.post("http://localhost:5000/auth/admin/login", { loginID, password });
-      
+      const response = await axios.post(
+        "http://localhost:5000/auth/admin/login",
+        { loginID, password },
+        { withCredentials: true }
+      );
+
       if (response.data.success) {
         setMessage({ type: "success", text: "Login successful! Redirecting..." });
-
-        // Redirect to dashboard after 2 seconds
         setTimeout(() => {
           navigate("/admin-dashboard");
         }, 2000);
@@ -37,42 +39,26 @@ const AdminLogin = () => {
 
   return (
     <div className="admin-login-container">
-      <div className="background">
-        <div className="shape"></div>
-        <div className="shape"></div>
-      </div>
       <form onSubmit={handleSubmit}>
         <h3>Login Here</h3>
-
         <label htmlFor="loginID">Login ID</label>
         <input
           type="text"
-          placeholder="Enter Login ID"
           id="loginID"
           value={loginID}
           onChange={(e) => setLoginID(e.target.value)}
           required
         />
-
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="Enter Password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Log In"}
-        </button>
-
-        {message && (
-          <p className={message.type === "success" ? "success-message" : "error-message"}>
-            {message.text}
-          </p>
-        )}
+        <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Log In"}</button>
+        {message && <p className={message.type === "success" ? "success-message" : "error-message"}>{message.text}</p>}
       </form>
     </div>
   );

@@ -1,43 +1,31 @@
-const Admin = require("../models/adminLoginModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { getAdminByLoginID } = require("../models/Admin");
 
-exports.adminLogin = (req, res) => {
+exports.adminLogin = async (req, res) => {
+  try {
     const { loginID, password } = req.body;
-
     if (!loginID || !password) {
-        return res.status(400).json({ success: false, message: "All fields are required." });
+      return res.status(400).json({ success: false, message: "All fields are required." });
     }
 
-    Admin.findByLoginID(loginID, async (err, results) => {
-        if (err) {
-            console.error("❌ Database error:", err);
-            return res.status(500).json({ success: false, message: "Server error. Please try again later." });
-        }
+    const admin = await getAdminByLoginID(loginID);
+    if (!admin) {
+      return res.status(401).json({ success: false, message: "Invalid credentials." });
+    }
 
-        if (results.length === 0) {
-            return res.status(401).json({ success: false, message: "Invalid login ID or password." });
-        }
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) {
+      return res.status(401).json({ success: false, message: "Invalid credentials." });
+    }
 
-        const admin = results[0];
+    const token = jwt.sign({ id: admin.id, role: "admin" }, process.env.JWT_SECRET, { expiresIn: "2h" });
 
-        try {
-            const passwordMatch = await bcrypt.compare(password, admin.password);
-            if (!passwordMatch) {
-                return res.status(401).json({ success: false, message: "Invalid login ID or password." });
-            }
+    res.cookie("token", token, { httpOnly: true, maxAge: 2 * 60 * 60 * 1000 });
 
-            // Generate JWT Token (Expires in 2 hours)
-            const token = jwt.sign({ adminID: admin.id }, process.env.JWT_SECRET, { expiresIn: "2h" });
-
-            return res.json({
-                success: true,
-                message: "Login successful!",
-                token
-            });
-        } catch (error) {
-            console.error("❌ Error in authentication:", error);
-            return res.status(500).json({ success: false, message: "Server error. Please try again later." });
-        }
-    });
+    res.json({ success: true, message: "Login successful", token });
+  } catch (error) {
+    console.error("Server Error:", error);
+    res.status(500).json({ success: false, message: "Server error. Please try again later." });
+  }
 };

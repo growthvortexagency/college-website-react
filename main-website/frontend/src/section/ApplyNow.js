@@ -5,6 +5,7 @@ import { ReactComponent as Location } from '../assets/icons/location-dot-solid.s
 import { ReactComponent as Phone } from '../assets/icons/phone-solid.svg';
 import { ReactComponent as Telephone } from '../assets/icons/telephone-icon.svg';
 import { ReactComponent as Email } from '../assets/icons/envelope-solid.svg';
+import EmailSent from '../assets/icons/check-mark-png.png'
 
 const ApplyNow = forwardRef((props, ref) => {
     const [formData, setFormData] = useState({
@@ -32,9 +33,8 @@ const ApplyNow = forwardRef((props, ref) => {
             setResponseMessage(response.data.message);
             setFormData({ name: '', course: '', email: '', contact: '', message: '' });
 
-            // Show success popup for 2 seconds
             setShowPopup(true);
-            setTimeout(() => setShowPopup(false), 2000);
+            setTimeout(() => setShowPopup(false), 4000);
         } catch (error) {
             setResponseMessage('Failed to send application. Please try again.');
         } finally {
@@ -73,7 +73,14 @@ const ApplyNow = forwardRef((props, ref) => {
                 </div>
 
                 <div className="contact-right">
-                {showPopup && <div className="popup-message">Thanks for submitting the form.</div>}
+                {showPopup && 
+                <div className="popup-message">
+                    <img src={EmailSent} alt="email_sent"/>
+                    <h1>Thanks for submitting the form.</h1>
+                    <p>Your message has been sent!</p>
+                    <p>We will contact you soon.</p>
+                </div>
+                }
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Enter Student's Name</label>

@@ -42,15 +42,22 @@
 
 @media (max-width: 768px) {
   .content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .content p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .main-banner {
     height: 30vh;
+  }
+
+  .apply-scroll-button {
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 10px;
   }
 }
 
@@ -66,13 +73,13 @@
   .main-banner {
     height: 30vh;
   }
+
 }
 
 .apply-scroll-button {
-  margin: 15px;
   padding: 15px 30px;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
