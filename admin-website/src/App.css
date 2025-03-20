@@ -1,0 +1,12 @@
+.main-content {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 14px;
+    width: 78%;
+    height: 96.5vh;
+    margin: 0 auto;
+    float: right;
+    background-color:rgb(221, 221, 221);
+}
