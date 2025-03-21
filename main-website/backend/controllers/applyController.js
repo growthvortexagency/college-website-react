@@ -10,7 +10,6 @@ exports.submitApplication = (req, res) => {
             return res.status(500).json({ message: 'Failed to save application.' });
         }
 
-        // Send email notification
         sendEmail(formData);
 
         res.status(201).json({ message: 'Application submitted successfully!' });

@@ -9,23 +9,28 @@ const SideBar = () => {
                 <hr />
             </div>
             <div id="nav-content">
-                <div class="nav-button"><i class="fas fa-palette"></i><span>Your Work</span></div>
-                <div class="nav-button"><i class="fas fa-images"></i><span>Assets</span></div>
-                <div class="nav-button"><i class="fas fa-thumbtack"></i><span>Pinned Items</span></div>
+                <div class="nav-button"><i class="fas fa-dashboard"></i><span>Dashboard</span></div>
+                <div class="nav-button"><i class="fas fa-users"></i><span>Students</span></div>
+                <div class="nav-button"><i class="fas fa-user"></i><span>Faculties</span></div>
                 <hr />
-                <div class="nav-button"><i class="fas fa-heart"></i><span>Following</span></div>
-                <div class="nav-button"><i class="fas fa-chart-line"></i><span>Trending</span></div>
-                <div class="nav-button"><i class="fas fa-fire"></i><span>Challenges</span></div>
-                <div class="nav-button"><i class="fas fa-magic"></i><span>Spark</span></div>
+                <div class="nav-button"><i class="fas fa-money-bill"></i><span>Fees Management</span></div>
+                <div class="nav-button"><i class="fas fa-file-invoice-dollar"></i><span>Invoices & Receipts</span></div>
+                <div class="nav-button"><i class="fas fa-credit-card"></i><span>Transactions</span></div>
+                <div class="nav-button"><i class="fas fa-hand-holding-usd"></i><span>Scholarships</span></div>
                 <hr />
-                <div class="nav-button"><i class="fas fa-gem"></i><span>Codepen Pro</span></div>
+                <div class="nav-button"><i class="fas fa-user-edit"></i><span>Applications</span></div>
+                <div class="nav-button"><i class="fas fa-id-card"></i><span>Admissions</span></div>
+                <hr />
+                <div class="nav-button"><i class="fas fa-book-open"></i><span>Courses</span></div>
+                <div class="nav-button"><i class="fas fa-building"></i><span>Departments</span></div>
+                <div class="nav-button"><i class="fas fa-table"></i><span>Timetable</span></div>
                 <div id="nav-content-highlight"></div>
             </div>
             <input id="nav-footer-toggle" type="checkbox" />
             <div id="nav-footer">
                 <div id="nav-footer-heading">
                     <div id="nav-footer-avatar"><img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" alt='' /></div>
-                    <div id="nav-footer-titlebox"><p id="nav-footer-title" target="_blank">uahnbu</p><span id="nav-footer-subtitle">Admin</span></div>
+                    <div id="nav-footer-titlebox"><p id="nav-footer-title" target="_blank">Abhishek</p><span id="nav-footer-subtitle">Admin</span></div>
                     <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
                 </div>
                 <div id="nav-footer-content">
