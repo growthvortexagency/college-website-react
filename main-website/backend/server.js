@@ -1,20 +1,17 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const applyRoutes = require('./routes/applyRoutes');
+require("dotenv").config();
 
 const app = express();
-app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+const applicationRoutes = require("./routes/applicationRoutes");
+
+app.use(cors());
 app.use(bodyParser.json());
-app.use(cookieParser());
 
-const authRoutes = require("./routes/adminRoutes");
-
-app.use('/api', applyRoutes);
-app.use("/auth", authRoutes);
+app.use("/api/application", applicationRoutes);
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

@@ -1,0 +1,114 @@
+.apply-headline {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.application-section {
+    height: auto;
+}
+
+  
+  /* Form Box */
+  .application-section .form-box {
+    background: white;
+    display: block;
+    padding: 20px;
+    width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  
+  .application-section label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .application-section input,
+  .application-section textarea,
+  .application-section select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 17px;
+  }
+  
+  .application-section textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  /* Submit Button */
+  .application-section .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 19px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .application-section .submit-btn:hover {
+    background: #333;
+  }
+  
+  .apply-form-section {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Prevents excessive width on large screens */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adds space between elements */
+    animation: fadeInOut 2s ease-in-out;
+}
+
+/* Image Styling */
+.popup-message img {
+    width: 80px; /* Adjust size as needed */
+    filter: brightness(0) invert(1);
+    height: auto;
+}
+
+/* Heading Styling */
+.popup-message h1 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+}
+
+/* Paragraph Styling */
+.popup-message p {
+    font-size: 16px;
+    margin: 0;
+}
+
+@media (width < 768px) {
+    .application-section .form-box {
+        max-width: 90%;
+      }
+}

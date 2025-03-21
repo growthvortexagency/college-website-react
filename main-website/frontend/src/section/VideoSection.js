@@ -1,8 +1,8 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 import '../styles/VideoSection.css'
 import Video from '../assets/video/DSC_0547.mp4'
 
-const VideoSection = ({ scrollToApplyNow }) => {
+const VideoSection = () => {
     return (
         <section className="main-banner" id="top" data-section="section1">
             <video autoPlay muted loop id="bg-video">
@@ -12,9 +12,9 @@ const VideoSection = ({ scrollToApplyNow }) => {
             <div className="content">
                 <h1>GET READY</h1>
                 <p>For an Unforgettable Journey of Learning and Growth.</p>
-                <button onClick={scrollToApplyNow} className="apply-scroll-button">
+                <Link to="/application"><button className="apply-scroll-button">
                     Apply Now
-                </button>
+                </button></Link>
             </div>
         </section>
     )

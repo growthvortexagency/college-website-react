@@ -33,21 +33,15 @@ import RecrutingPartners from './pages/Placements/RecrutingPartners';
 import Training from './pages/Placements/Training';
 import Faculties from "./pages/Faculties/Faculties";
 import Library from "./pages/Library/Library";
-import StaffDashboard from "./pages/Dashboards/Faculty/staffsdashboards";
-import AdminDashboard from "./pages/Dashboards/Admin/AdminDashboard";
+import Application from "./pages/Application";
 
 function AppContent() {
   const location = useLocation();
 
   const noHeaderNavbarRoutes = [
     "/login/adminlogin",
-    "/Dashboards/StaffDashboard",
     "/login/staffslogin",
-    "/login/studentslogin",
-    "/admin-dashboard",
-    "/admin-dashboard/dashboard",
-    "/admin-dashboard/newsandevents",
-    "/admin-dashboard/faculties"
+    "/login/studentslogin"
   ];
 
   const shouldHideHeaderNavbar = noHeaderNavbarRoutes.includes(location.pathname);
@@ -84,8 +78,7 @@ function AppContent() {
         <Route path="/Login/AdminLogin" element={<AdminLogin />} />
         <Route path="/Login/StaffsLogin" element={<StaffsLogin />} />
         <Route path="/Login/StudentsLogin" element={<StudentsLogin />} />
-        <Route path="/Dashboards/StaffDashboard" element={<StaffDashboard />} />
-        <Route path="/admin-dashboard/*" element={<AdminDashboard />} />
+        <Route path="/application" element={<Application />} />
       </Routes>
       {!shouldHideHeaderNavbar && <Footer />}
     </>
