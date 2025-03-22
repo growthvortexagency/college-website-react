@@ -4,7 +4,6 @@ import VideoSection from '../../section/VideoSection'
 import AcademicsSection from '../../section/AcademicsSection'
 import UpcomingEvents from '../../section/UpcomingEvents'
 import StudentsLife from '../../section/StudentsLife'
-import ApplyNow from '../../section/ApplyNow'
 
 const Home = () => {
 
@@ -23,7 +22,6 @@ const Home = () => {
       <StudentsLife/>
       <EventCards/>
       <UpcomingEvents/>
-      <ApplyNow ref={applyNowRef}/>
     </div>
   )
 }

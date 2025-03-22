@@ -1,4 +1,5 @@
 import '../styles/SideBar.css'
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
 
@@ -18,7 +19,7 @@ const SideBar = () => {
                 <div class="nav-button"><i class="fas fa-credit-card"></i><span>Transactions</span></div>
                 <div class="nav-button"><i class="fas fa-hand-holding-usd"></i><span>Scholarships</span></div>
                 <hr />
-                <div class="nav-button"><i class="fas fa-user-edit"></i><span>Applications</span></div>
+                <Link to="/dashboard/applications"><div class="nav-button"><i class="fas fa-user-edit"></i><span>Applications</span></div></Link>
                 <div class="nav-button"><i class="fas fa-id-card"></i><span>Admissions</span></div>
                 <hr />
                 <div class="nav-button"><i class="fas fa-book-open"></i><span>Courses</span></div>
