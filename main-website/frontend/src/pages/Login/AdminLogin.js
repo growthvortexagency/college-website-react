@@ -1,65 +1,75 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../styles/pages/AdminLogin.css";
 
 const AdminLogin = () => {
-  const [loginID, setLoginID] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "", // Fixed: Changed from "email" to "username"
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value, // Correctly updates state
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setMessage("");
+    console.log("Submitting:", formData);
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/auth/admin/login",
-        { loginID, password },
-        { withCredentials: true }
-      );
+      const response = await axios.post("http://localhost:5000/api/admin/login", formData, {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true, // To handle cookies/sessions
+      });
 
-      if (response.data.success) {
-        setMessage({ type: "success", text: "Login successful! Redirecting..." });
-        setTimeout(() => {
-          navigate("/admin-dashboard");
-        }, 2000);
-      } else {
-        setMessage({ type: "error", text: response.data.message });
-      }
+      console.log("Response:", response.data);
+      alert("Login Successful");
+      // Redirect to admin dashboard on success
+      window.location.href = "/admin-dashboard";
     } catch (error) {
-      setMessage({ type: "error", text: "Server error. Please try again later." });
-    } finally {
-      setLoading(false);
+      console.error("Login Error:", error.response?.data || error.message);
+      alert("Invalid credentials. Please try again.");
     }
   };
 
   return (
-    <div className="admin-login-container">
-      <form onSubmit={handleSubmit}>
-        <h3>Login Here</h3>
-        <label htmlFor="loginID">Login ID</label>
-        <input
-          type="text"
-          id="loginID"
-          value={loginID}
-          onChange={(e) => setLoginID(e.target.value)}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Log In"}</button>
-        {message && <p className={message.type === "success" ? "success-message" : "error-message"}>{message.text}</p>}
-      </form>
+    <div className="adminLogin-container">
+      <div className="adminLogin-login-box">
+        <h1>Admin Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="adminLogin-form-group">
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div className="adminLogin-form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" className="adminLogin-login-btn">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
