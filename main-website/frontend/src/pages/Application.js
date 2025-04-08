@@ -24,26 +24,30 @@ const Application = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setShowPopup(true);
-    
+
         try {
             const response = await fetch("http://localhost:5000/api/application/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
-    
+
             const data = await response.json();
             console.log(data);
-    
+
             if (response.ok) {
+                setShowPopup(true); // show popup only if success
+
                 setTimeout(() => {
-                    setShowPopup(false);
-                }, 3000);
+                    setShowPopup(false); // hide after 2 seconds
+                }, 2000);
             } else {
                 alert("Error submitting the form!");
+                setShowPopup(false);
             }
         } catch (error) {
             console.error("Error:", error);
+            setShowPopup(false);
         }
     };
 
